@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abdallah Hany Refaat | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Reset & base */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background: #f9f9f9;
+        color: #333;
+        transition: background 0.4s ease, color 0.4s ease;
+      }
+      a {
+        color: #1976d2;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      a:hover {
+        color: #0d47a1;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(120deg, #0d47a1, #1976d2);
+        padding: 3rem 1rem;
+        color: white;
+        animation: fadeInDown 1s ease;
+      }
+      .header-container {
+        max-width: 900px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .header-img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #ffffffaa;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+        animation: float 4s ease-in-out infinite;
+        flex-shrink: 0;
+      }
+      .header-text h1 {
+        font-size: 2.8rem;
+        margin-bottom: 0.3rem;
+      }
+      .header-text p {
+        font-size: 1.3rem;
+        font-weight: 500;
+        opacity: 0.9;
+      }
+
+      /* About */
+      #about {
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+      }
+      .about-container {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .about-pic {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        animation: float 4s ease-in-out infinite;
+        box-shadow: 0 0 20px rgba(29, 78, 216, 0.8);
+        border: 4px solid #1d4ed8;
+        flex-shrink: 0;
+      }
+      #about p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        max-width: 600px;
+        animation: fadeInText 1.5s ease forwards;
+        opacity: 0;
+        color: #333;
+      }
+
+      /* Skills */
+      #skills {
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+      }
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+      }
+      .skill {
+        background: linear-gradient(135deg, #1976d2, #42a5f5);
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(25, 118, 210, 0.3);
+        font-weight: 600;
+        font-size: 1.1rem;
+        flex: 1 1 220px;
+        text-align: center;
+        cursor: default;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.8rem;
+      }
+      .skill i {
+        font-size: 1.5rem;
+      }
+      .skill:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 14px 24px rgba(25, 118, 210, 0.5);
+      }
+
+      /* Projects */
+      #projects {
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+      .project {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgb(0 0 0 / 0.1);
+        padding: 1rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+      .project:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 24px rgb(0 0 0 / 0.15);
+      }
+      .project img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 0.7rem;
+        user-select: none;
+      }
+      .project a {
+        font-weight: 700;
+        font-size: 1.1rem;
+        display: inline-block;
+        margin-bottom: 0.3rem;
+        color: #0d47a1;
+      }
+      .project p {
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      /* Experience */
+      #experience {
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+      }
+      #experience ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        font-size: 1.1rem;
+        color: #444;
+      }
+      #experience li {
+        margin-bottom: 0.7rem;
+        opacity: 0.9;
+      }
+
+      /* Contact */
+      #contact {
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+        text-align: center;
+      }
+      .contact-info {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+      }
+      .contact-info a {
+        font-weight: 600;
+        color: #1976d2;
+      }
+
+      /* Footer */
+      footer {
+        background: #0d47a1;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        font-size: 0.9rem;
+        position: relative;
+      }
+      footer a.github {
+        display: inline-block;
+        margin-top: 0.5rem;
+        color: #90caf9;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      footer a.github:hover {
+        color: white;
+      }
+
+      /* Animations */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+          box-shadow: 0 0 20px rgba(29, 78, 216, 0.8);
+        }
+        50% {
+          transform: translateY(-15px);
+          box-shadow: 0 15px 35px rgba(29, 78, 216, 1);
+        }
+      }
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInText {
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Language switcher */
+      .lang-switcher {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        background: #1976d2;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(25, 118, 210, 0.5);
+        transition: background 0.3s ease;
+        z-index: 999;
+      }
+      .lang-switcher:hover {
+        background: #0d47a1;
+      }
+
+      /* RTL support when Arabic is active */
+      body[dir="rtl"] {
+        direction: rtl;
+        text-align: right;
+      }
+      body[dir="rtl"] header,
+      body[dir="rtl"] #about .about-container,
+      body[dir="rtl"] .skills {
+        flex-direction: row-reverse;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Language toggle button -->
+    <button class="lang-switcher" id="toggle-lang">عربي</button>
+
+    <header>
+      <div class="header-container">
+        <div class="header-text">
+          <h1 data-en="Abdallah Hany Refaat" data-ar="عبد الله هاني رفعت">
+            Abdallah Hany Refaat
+          </h1>
+          <p
+            data-en="Front-End Developer | Digital Marketer | Sales Expert"
+            data-ar="مطور واجهات أمامية | مسوق رقمي | خبير مبيعات"
+          >
+            Front-End Developer | Digital Marketer | Sales Expert
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2 data-en="About Me" data-ar="عني">About Me</h2>
+      <div class="about-container">
+        <img
+          src="./my photo.jpg"
+          alt="Abdallah Hany Refaat"
+          data-en-alt="Abdallah Hany Refaat"
+          data-ar-alt="عبد الله هاني رفعت"
+          class="about-pic"
+        />
+        <p
+          data-en="I'm a passionate front-end developer with experience in building administrative and accounting systems for restaurants and cafés using HTML, CSS, JavaScript, and LocalStorage. I also have professional experience in sales, having worked at Orange Telecom, and in digital marketing, managing several social media pages and ad campaigns."
+          data-ar="أنا مطور واجهات أمامية شغوف ولدي خبرة في بناء أنظمة إدارية ومحاسبية للمطاعم والكافيهات باستخدام HTML و CSS و JavaScript و LocalStorage. كما لدي خبرة مهنية في المبيعات، حيث عملت في Orange Telecom، وفي التسويق الرقمي بإدارة عدة صفحات وحملات إعلانية."
+        >
+          I'm a passionate front-end developer with experience in building
+          administrative and accounting systems for restaurants and cafés using
+          HTML, CSS, JavaScript, and LocalStorage. I also have professional
+          experience in sales, having worked at Orange Telecom, and in digital
+          marketing, managing several social media pages and ad campaigns.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 data-en="Skills" data-ar="المهارات">Skills</h2>
+      <div class="skills">
+        <div class="skill">
+          <i class="fab fa-html5"></i>
+          <span
+            data-en="HTML / CSS / JavaScript"
+            data-ar="HTML / CSS / JavaScript"
+            >HTML / CSS / JavaScript</span
+          >
+        </div>
+        <div class="skill">
+          <i class="fas fa-database"></i>
+          <span data-en="LocalStorage Systems" data-ar="أنظمة LocalStorage"
+            >LocalStorage Systems</span
+          >
+        </div>
+        <div class="skill">
+          <i class="fas fa-handshake"></i>
+          <span
+            data-en="Sales & Customer Service"
+            data-ar="المبيعات وخدمة العملاء"
+            >Sales & Customer Service</span
+          >
+        </div>
+        <div class="skill">
+          <i class="fab fa-facebook"></i>
+          <span
+            data-en="Social Media Marketing"
+            data-ar="التسويق عبر وسائل التواصل"
+            >Social Media Marketing</span
+          >
+        </div>
+        <div class="skill">
+          <i class="fas fa-paint-brush"></i>
+          <span data-en="Canva Design" data-ar="تصميم كانفا">Canva Design</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 data-en="Projects" data-ar="المشاريع">Projects</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <a
+            href="https://apdla-coder.github.io/the-grand-egyptian-museum/"
+            target="_blank"
+          >
+            <img
+              src="./التمحف.jpg"
+              alt="The Grand Egyptian Museum"
+              data-en-alt="The Grand Egyptian Museum"
+              data-ar-alt="المتحف المصري الكبير"
+            />
+            The Grand Egyptian Museum
+          </a>
+          <p
+            data-en="A multi-language website showcasing museum tours and content."
+            data-ar="موقع متعدد اللغات يعرض جولات ومحتوى المتحف."
+          >
+            A multi-language website showcasing museum tours and content.
+          </p>
+        </div>
+        <div class="project">
+          <a href="https://apdla-coder.github.io/Home-Care/" target="_blank">
+            <img
+              src="./WhatsApp Image 2025-05-15 at 21.17.56_2ee04b6b.jpg"
+              alt="Home Care System"
+              data-en-alt="Home Care System"
+              data-ar-alt="نظام رعاية منزلية"
+            />
+            Home Care System
+          </a>
+          <p
+            data-en="A system for managing nurses and services for a home care office."
+            data-ar="نظام لإدارة الممرضين والخدمات لمكتب رعاية منزلية."
+          >
+            A system for managing nurses and services for a home care office.
+          </p>
+        </div>
+        <div class="project">
+          <a
+            href="https://apdla-coder.github.io/Sustainable-development-plan"
+            target="_blank"
+          >
+            <img
+              src="./خطة.jpg"
+              alt="Sustainable Development Plan"
+              data-en-alt="Sustainable Development Plan"
+              data-ar-alt="خطة التنمية المستدامة"
+            />
+            Sustainable Development Plan
+          </a>
+          <p
+            data-en="A comprehensive plan focused on sustainable development goals."
+            data-ar="خطة شاملة تركز على أهداف التنمية المستدامة."
+          >
+            A comprehensive plan focused on sustainable development goals.
+          </p>
+        </div>
+        <div class="project">
+          <a
+            href="https://apdla-coder.github.io/INsure_website/"
+            target="_blank"
+          >
+            <img
+              src="./WhatsApp Image 2025-05-15 at 21.21.45_fe1e6056.jpg"
+              alt="INsure Insurance Website"
+              data-en-alt="INsure Insurance Website"
+              data-ar-alt="موقع تأمين INsure"
+            />
+            INsure Insurance Website
+          </a>
+          <p
+            data-en="Responsive website design for a fictional insurance company."
+            data-ar="تصميم موقع استجابة لشركة تأمين خيالية."
+          >
+            Responsive website design for a fictional insurance company.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 data-en="Experience" data-ar="الخبرات">Experience</h2>
+      <ul>
+        <li
+          data-en="Front-End Developer for restaurant & cafe systems"
+          data-ar="مطور واجهات أمامية لأنظمة المطاعم والكافيهات"
+        >
+          Front-End Developer for restaurant & cafe systems
+        </li>
+        <li
+          data-en="Sales Executive at Orange Telecom"
+          data-ar="موظف مبيعات في Orange Telecom"
+        >
+          Sales Executive at Orange Telecom
+        </li>
+        <li
+          data-en="Social Media Manager for multiple pages and campaigns"
+          data-ar="مدير صفحات وحملات تسويقية عبر وسائل التواصل"
+        >
+          Social Media Manager for multiple pages and campaigns
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2 data-en="Contact Me" data-ar="تواصل معي">Contact Me</h2>
+      <p
+        class="contact-info"
+        data-en="Email: abdallah@example.com"
+        data-ar="البريد الإلكتروني: abdallah@example.com"
+      >
+        Email: <a href="mailto:abdallah@example.com">abdallah@example.com</a>
+      </p>
+      <p
+        class="contact-info"
+        data-en="Phone: +20 123 456 7890"
+        data-ar="رقم الهاتف: +20 123 456 7890"
+      >
+        Phone: <a href="tel:+201234567890">+20 123 456 7890</a>
+      </p>
+    </section>
+
+    <footer>
+      &copy; 2025 Abdallah Hany Refaat — All Rights Reserved
+      <br />
+      <a
+        href="https://github.com/apdla-coder"
+        target="_blank"
+        rel="noopener"
+        class="github"
+        ><i class="fab fa-github"></i> GitHub Profile</a
+      >
+    </footer>
+
+    <script>
+      const toggleBtn = document.getElementById("toggle-lang");
+      let currentLang = "en";
+
+      function translatePage(lang) {
+        const elements = document.querySelectorAll("[data-en]");
+        elements.forEach((el) => {
+          if (el.tagName.toLowerCase() === "img") {
+            const altEn = el.getAttribute("data-en-alt");
+            const altAr = el.getAttribute("data-ar-alt");
+            if (altEn && altAr) {
+              el.alt = lang === "ar" ? altAr : altEn;
+            }
+          } else {
+            el.textContent =
+              lang === "ar"
+                ? el.getAttribute("data-ar")
+                : el.getAttribute("data-en");
+          }
+        });
+
+        if (lang === "ar") {
+          document.documentElement.lang = "ar";
+          document.body.dir = "rtl";
+          toggleBtn.textContent = "English";
+        } else {
+          document.documentElement.lang = "en";
+          document.body.removeAttribute("dir");
+          toggleBtn.textContent = "عربي";
+        }
+
+        currentLang = lang;
+      }
+
+      toggleBtn.addEventListener("click", () => {
+        translatePage(currentLang === "en" ? "ar" : "en");
+      });
+
+      // Initialize with default language
+      translatePage(currentLang);
+    </script>
+  </body>
+</html>
